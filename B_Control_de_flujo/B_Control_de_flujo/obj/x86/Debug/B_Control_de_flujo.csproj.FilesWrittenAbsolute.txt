@@ -1,0 +1,5 @@
+/Users/manolo/Documents/Proyectos/Github/unity-projects/B_Control_de_flujo/B_Control_de_flujo/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/manolo/Documents/Proyectos/Github/unity-projects/B_Control_de_flujo/B_Control_de_flujo/bin/Debug/B_Control_de_flujo.exe.mdb
+/Users/manolo/Documents/Proyectos/Github/unity-projects/B_Control_de_flujo/B_Control_de_flujo/bin/Debug/B_Control_de_flujo.exe
+/Users/manolo/Documents/Proyectos/Github/unity-projects/B_Control_de_flujo/B_Control_de_flujo/obj/x86/Debug/B_Control_de_flujo.exe
+/Users/manolo/Documents/Proyectos/Github/unity-projects/B_Control_de_flujo/B_Control_de_flujo/obj/x86/Debug/B_Control_de_flujo.exe.mdb
