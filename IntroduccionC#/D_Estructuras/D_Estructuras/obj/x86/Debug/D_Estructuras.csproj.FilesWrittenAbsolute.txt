@@ -1,0 +1,5 @@
+/Users/manolo/Documents/Proyectos/Github/unity-projects/D_Estructuras/D_Estructuras/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/manolo/Documents/Proyectos/Github/unity-projects/D_Estructuras/D_Estructuras/bin/Debug/D_Estructuras.exe.mdb
+/Users/manolo/Documents/Proyectos/Github/unity-projects/D_Estructuras/D_Estructuras/bin/Debug/D_Estructuras.exe
+/Users/manolo/Documents/Proyectos/Github/unity-projects/D_Estructuras/D_Estructuras/obj/x86/Debug/D_Estructuras.exe
+/Users/manolo/Documents/Proyectos/Github/unity-projects/D_Estructuras/D_Estructuras/obj/x86/Debug/D_Estructuras.exe.mdb
