@@ -1,5 +1,0 @@
-/Users/manolo/Documents/Proyectos/Github/unity-projects/C_Tipos_compuestos/C_Tipos_compuestos/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/manolo/Documents/Proyectos/Github/unity-projects/C_Tipos_compuestos/C_Tipos_compuestos/bin/Debug/C_Tipos_compuestos.exe.mdb
-/Users/manolo/Documents/Proyectos/Github/unity-projects/C_Tipos_compuestos/C_Tipos_compuestos/bin/Debug/C_Tipos_compuestos.exe
-/Users/manolo/Documents/Proyectos/Github/unity-projects/C_Tipos_compuestos/C_Tipos_compuestos/obj/x86/Debug/C_Tipos_compuestos.exe
-/Users/manolo/Documents/Proyectos/Github/unity-projects/C_Tipos_compuestos/C_Tipos_compuestos/obj/x86/Debug/C_Tipos_compuestos.exe.mdb
