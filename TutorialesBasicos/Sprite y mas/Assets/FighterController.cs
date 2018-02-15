@@ -6,6 +6,7 @@ public class FighterController : MonoBehaviour {
 
 	public float speed;
 	public float padding;
+	public GameObject bullet;
 
 	// Use this for initialization
 	void Start () {
@@ -35,5 +36,24 @@ public class FighterController : MonoBehaviour {
 		float newX = Mathf.Clamp(transform.position.x, -10 + padding, 10 - padding);
 		float newY = Mathf.Clamp(transform.position.y, -10 + padding, 10 - padding);
 		transform.position = new Vector3(newX, newY, transform.position.z);
+
+		if(Input.GetKeyDown(KeyCode.Space)){
+			// Poner el repetidor en marcha
+			InvokeRepeating("Fire", 0.001f, 0.25f);
+		}
+		else if(Input.GetKeyUp(KeyCode.Space)){
+			// Parar el repetidor
+			CancelInvoke("Fire");
+		}
+	}
+
+	void Fire(){
+		var fighter = GameObject.Find("Fighter");
+		if(fighter != null){
+			Vector3 newLeftPosition = fighter.transform.position + Vector3.up * 1.25f + Vector3.left * 0.65f;
+			Vector3 newRightPosition = fighter.transform.position + Vector3.up * 1.25f + Vector3.right * 0.65f;
+			Instantiate(bullet, newLeftPosition, Quaternion.identity);
+			Instantiate(bullet, newRightPosition, Quaternion.identity);
+		}
 	}
 }
