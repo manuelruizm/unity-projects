@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour {
 
 	private AudioSource musicPlayer;
 
+	public float scaleTime = 6f;
+	public float scaleInc = 0.25f;
+
 	// Use this for initialization
 	void Start () {
 		musicPlayer = GetComponent<AudioSource>();
@@ -40,6 +43,7 @@ public class GameController : MonoBehaviour {
 			player.SendMessage("UpdateState", "PlayerRun");
 			enemyGenerator.SendMessage("StartGenerator");
 			musicPlayer.Play();
+			InvokeRepeating("GameTimeScale", scaleTime, scaleTime);
 		}
 
 		// Juego en marcha
@@ -63,6 +67,16 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void RestartGame(){
+		ResetTimeScale();
 		SceneManager.LoadScene("Escena1");
+	}
+
+	void GameTimeScale(){
+		Time.timeScale += scaleInc;
+	}
+
+	public void ResetTimeScale(float newTimeScale = 1f){
+		CancelInvoke("GameTimeScale");
+		Time.timeScale = newTimeScale;
 	}
 }
