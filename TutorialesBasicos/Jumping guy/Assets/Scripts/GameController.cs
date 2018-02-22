@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
+	public GameObject enemyGenerator;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -30,6 +32,7 @@ public class GameController : MonoBehaviour {
 			gameState = GameState.Playing;
 			uiIdle.SetActive(false);
 			player.SendMessage("UpdateState", "PlayerRun");
+			enemyGenerator.SendMessage("StartGenerator");
 		}
 
 		// Juego en marcha
