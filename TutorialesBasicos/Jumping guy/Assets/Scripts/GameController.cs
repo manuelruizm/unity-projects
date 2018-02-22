@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum GameState {Idle, Playing, Ended};
+public enum GameState {Idle, Playing, Ended, Ready};
 
 public class GameController : MonoBehaviour {
 
@@ -44,7 +44,8 @@ public class GameController : MonoBehaviour {
 			Parallax();
 		}
 
-		else if(gameState == GameState.Ended){
+		// Juego preparado para reiniciarse
+		else if(gameState == GameState.Ready){
 			if(userAction){
 				RestartGame();
 			}
