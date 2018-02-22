@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	private AudioSource audioPlayer;
 	public AudioClip jumpClip;
 	public AudioClip dieClip;
+	public AudioClip pointClip;
 
 	private float startY;
 
@@ -54,6 +55,11 @@ public class PlayerController : MonoBehaviour {
 
 			game.GetComponent<AudioSource>().Stop();
 			audioPlayer.clip = dieClip;
+			audioPlayer.Play();
+		}
+		else if(other.gameObject.tag == "Point"){
+			game.SendMessage("IncreasePoints");
+			audioPlayer.clip = pointClip;
 			audioPlayer.Play();
 		}
 	}

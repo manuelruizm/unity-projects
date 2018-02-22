@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 	public RawImage platform;
 
 	public GameObject uiIdle;
+	public GameObject uiScore;
 
 	public GameState gameState = GameState.Idle;
 
@@ -25,6 +26,9 @@ public class GameController : MonoBehaviour {
 
 	public float scaleTime = 6f;
 	public float scaleInc = 0.25f;
+
+	private int points = 0;
+	public Text pointsText;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +44,7 @@ public class GameController : MonoBehaviour {
 		if(gameState == GameState.Idle && userAction){
 			gameState = GameState.Playing;
 			uiIdle.SetActive(false);
+			uiScore.SetActive(true);
 			player.SendMessage("UpdateState", "PlayerRun");
 			player.SendMessage("DustPlay");
 			enemyGenerator.SendMessage("StartGenerator");
@@ -79,5 +84,9 @@ public class GameController : MonoBehaviour {
 	public void ResetTimeScale(float newTimeScale = 1f){
 		CancelInvoke("GameTimeScale");
 		Time.timeScale = newTimeScale;
+	}
+
+	public void IncreasePoints(){
+		pointsText.text = (++points).ToString();
 	}
 }
