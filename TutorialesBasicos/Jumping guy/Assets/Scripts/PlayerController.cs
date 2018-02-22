@@ -8,16 +8,30 @@ public class PlayerController : MonoBehaviour {
 	public GameObject game;
 	public GameObject enemyGenerator;
 
+	private AudioSource audioPlayer;
+	public AudioClip jumpClip;
+	public AudioClip dieClip;
+
+	private float startY;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
+		audioPlayer = GetComponent<AudioSource>();
+		startY = transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		bool gamePlaying = game.GetComponent<GameController>().gameState == GameState.Playing;
-		if(gamePlaying && (Input.GetKeyDown("up") || Input.GetMouseButtonDown(0))){
+		bool isGrounded = transform.position.y == startY;
+		bool userAction = Input.GetKeyDown("up") || Input.GetMouseButtonDown(0);
+
+		if(gamePlaying && userAction && isGrounded){
 			UpdateState("PlayerJump");
+
+			audioPlayer.clip = jumpClip;
+			audioPlayer.Play();
 		}
 	}
 
@@ -33,6 +47,10 @@ public class PlayerController : MonoBehaviour {
 			UpdateState("PlayerDie");
 			game.GetComponent<GameController>().gameState = GameState.Ended;
 			enemyGenerator.SendMessage("StopGenerator", true);
+
+			game.GetComponent<AudioSource>().Stop();
+			audioPlayer.clip = dieClip;
+			audioPlayer.Play();
 		}
 	}
 
