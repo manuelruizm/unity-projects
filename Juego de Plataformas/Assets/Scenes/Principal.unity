@@ -375,7 +375,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -9.433046, y: -2.5653877}
+  - {x: -8.996658, y: -2.54242}
   - {x: 0.45419025, y: -2.5424821}
 --- !u!4 &1690400928
 Transform:
@@ -547,7 +547,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1862063217
 BoxCollider2D:
@@ -585,9 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504f548bc3d924319811461801a37671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  speed: 20
+  maxSpeed: 3
+  speed: 75
   grounded: 0
+  jumpPower: 9.25
 --- !u!1001 &1877873187
 Prefab:
   m_ObjectHideFlags: 0
