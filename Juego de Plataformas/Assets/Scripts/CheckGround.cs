@@ -16,11 +16,19 @@ public class CheckGround : MonoBehaviour {
 		if(collisionInfo.gameObject.tag == "Ground"){
 			player.grounded = true;
 		}
+
+		if(collisionInfo.gameObject.tag == "Platform"){
+			player.grounded = true;
+		}
 	}
 
 	void OnCollisionExit2D(Collision2D collisionInfo)
 	{
 		if(collisionInfo.gameObject.tag == "Ground"){
+			player.grounded = false;
+		}
+
+		if(collisionInfo.gameObject.tag == "Platform"){
 			player.grounded = false;
 		}
 	}
