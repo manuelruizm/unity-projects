@@ -182,6 +182,7 @@
 'Assets/Scripts/CameraFollow.cs'
 'Assets/Scripts/CheckGround.cs'
 'Assets/Scripts/DrawSceneLine.cs'
+'Assets/Scripts/EnemyController.cs'
 'Assets/Scripts/PlataformaFalling.cs'
 'Assets/Scripts/PlataformaMovil.cs'
 'Assets/Scripts/PlayerController.cs'
