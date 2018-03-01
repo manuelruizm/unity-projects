@@ -25,5 +25,12 @@ public class EnemyController : MonoBehaviour {
 			speed = -speed;
 			rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
 		}
+
+		if(speed > 0){
+			transform.localScale = new Vector3(-1f, 1f, 1f);
+		}
+		else if(speed < 0){
+			transform.localScale = new Vector3(1f, 1f, 1f);
+		}
 	}
 }
