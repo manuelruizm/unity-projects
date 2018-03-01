@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private Animator anim;
 	private bool jump;
+	private bool doubleJump;
 	
 
 	// Use this for initialization
@@ -26,8 +27,19 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
 		anim.SetBool("Grounded", grounded);
 
-		if(Input.GetKeyDown(KeyCode.UpArrow) && grounded){
-			jump = true;
+		if(grounded){
+			doubleJump = true;
+		}
+
+		if(Input.GetKeyDown(KeyCode.UpArrow)){
+			if(grounded){
+				jump = true;
+				doubleJump = true;
+			}
+			else if(doubleJump){
+				jump = true;
+				doubleJump = false;
+			}
 		}
 	}
 
