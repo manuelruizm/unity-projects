@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	private Animator anim;
+	private SpriteRenderer spr;
 	private bool jump;
 	private bool doubleJump;
+	private bool movement = true;
 	
 
 	// Use this for initialization
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 		
 		rb2d = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		spr = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -53,6 +56,8 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		float h = Input.GetAxis("Horizontal");
+		if(!movement) h = 0;
+
 		rb2d.AddForce(Vector2.right * speed * h);
 
 		float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
@@ -81,5 +86,23 @@ public class PlayerController : MonoBehaviour {
 
 	public void EnemyJump(){
 		jump = true;
+	}
+
+	public void EnemyKnockBack(float enemyPosX){
+		jump = true;
+
+		float side = Mathf.Sign(enemyPosX - transform.position.x);
+		rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse);
+
+		movement = false;
+		Invoke("EnableMovement", 0.7f);
+
+		Color color = new Color(255/255f, 106/255f, 0f);
+		spr.color = color;
+	}
+
+	void EnableMovement(){
+		movement = true;
+		spr.color = Color.white;
 	}
 }
