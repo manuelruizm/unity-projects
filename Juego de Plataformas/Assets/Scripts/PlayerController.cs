@@ -78,4 +78,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		transform.position = new Vector3(-1f, 0f, 0f);
 	}
+
+	public void EnemyJump(){
+		jump = true;
+	}
 }

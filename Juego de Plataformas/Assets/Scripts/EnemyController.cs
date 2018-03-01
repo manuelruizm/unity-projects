@@ -36,10 +36,12 @@ public class EnemyController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		float yOffset = 0.3f;
 		if(col.gameObject.tag == "Player"){
-			if(transform.position.y + yOffset < col.transform.position.y)
+			float yOffset = 0.3f;
+			if(transform.position.y + yOffset < col.transform.position.y){
+				col.SendMessage("EnemyJump");
 				DestroyObject(gameObject);
+			}
 		}
 	}
 }
