@@ -9,4 +9,8 @@ public class ScriptA : MonoBehaviour {
 	public void MostrarNumero(){
 		print(numero);
 	}
+
+	public void EstablecerNumero(int valor){
+		numero = valor;
+	}
 }
