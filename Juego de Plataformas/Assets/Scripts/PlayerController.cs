@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 	private bool jump;
 	private bool doubleJump;
 	private bool movement = true;
+
+	private GameObject healthbar;
 	
 
 	// Use this for initialization
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		spr = GetComponent<SpriteRenderer>();
+		healthbar = GameObject.Find("HealthBar");
 	}
 	
 	// Update is called once per frame
@@ -89,6 +92,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void EnemyKnockBack(float enemyPosX){
+		healthbar.SendMessage("TakeDamage",15);
+
 		jump = true;
 
 		float side = Mathf.Sign(enemyPosX - transform.position.x);
